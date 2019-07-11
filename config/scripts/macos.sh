@@ -26,9 +26,10 @@ if test ! $(which brew); then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+brew update
+brew upgrade
 
 brews=(
-    anaconda
     fish
     fd
     rg
@@ -36,7 +37,6 @@ brews=(
     tmux
     ranger
     git
-    kakoune --HEAD
 )
 
 casks=(
@@ -50,6 +50,9 @@ pips=(
     black
     pylint
 )
+
+echo "Installing packages..."
+brew install ${brews[@]}
 
 
 # # FISH SHELL
