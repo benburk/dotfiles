@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # macOS bootstrap script
 # idempotent, directory-independent
+# hope is that if things aren't working I can retrace my steps with this
 
 
 echo "Symlinking iCloud to home directory..."
@@ -14,9 +15,9 @@ git -C $dotfiles pull || git clone https://github.com/benburk/dotfiles.git $dotf
 
 
 echo "Symlinking configs..."
-ln -sfh $dotfiles/.tmux.conf ~/.tmux.conf
-ln -sfh $dotfiles/.ignore ~/.ignore
-ln -sfh $dotfiles/.config ~/.config
+ln -sfh $dotfiles/tmux.conf ~/.tmux.conf
+ln -sfh $dotfiles/ignore ~/.ignore
+ln -sfh $dotfiles/config ~/.config
 
 
 # Install homebrew if not installed

@@ -1,4 +1,3 @@
-
 # Remove welcome label
 set fish_greeting
 
