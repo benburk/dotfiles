@@ -62,3 +62,6 @@ brew install ${brews[@]}
 
 # # anaconda support
 # set -U fish_user_paths /anaconda3/bin $fish_user_paths
+
+
+echo "bootstrapping complete!"
