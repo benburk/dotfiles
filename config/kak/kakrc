@@ -1,100 +1,24 @@
+set-option global tabstop 4
+
 ###########
 # PLUGINS #
 ###########
-
-# source the plugin manager itself
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
 plug "andreyorst/plug.kak" noload
 
-plug "andreyorst/fzf.kak" %{
-    # map  global normal '<c-p>' ': fzf-mode<ret>' -docstring 'fzf mode'
-    map global normal <c-p> ': fzf-mode<ret>' -docstring "enter fzf-mode"
-    set-option global fzf_file_command 'fd --follow'
-    set-option global fzf_cd_command 'fd --follow --type directory'
-}
-
-
 plug "andreyorst/smarttab.kak" %{
-    # when `backspace' is pressed, 4 spaces are deleted at once
-    set-option global softtabstop 4
-    hook global WinSetOption .* expandtab
+    set-option global softtabstop 4  # backspace deletes 4 spaces
+    hook global WinSetOption filetype=(rust|markdown|kak|python|sh) expandtab
+    hook global WinSetOption filetype=(makefile|gas) noexpandtab
+    hook global WinSetOption filetype=(c|cpp) smarttab
 }
 
-
-plug "alexherbo2/auto-pairs.kak" %{
-    map global user 's' ': auto-pairs-surround<ret>' -docstring "surround selection"
-    hook global WinCreate .* auto-pairs-enable
-}
-
-
-# plug "ul/kak-lsp" noload
 
 # eval %sh{kak-lsp --kakoune -s $kak_session}
 # lsp-enable
-# # hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp) %{
-# #     lsp-enable-window
-# #     # lsp-auto-hover-enable
-# # }
 
-
-############
-# SETTINGS #
-############
-set-option global tabstop 4
-
-##############
-# APPEARANCE #
-##############
-colorscheme default
-
-hook global WinCreate .* %{
-    # highlight matching braces
-    add-highlighter window/matching show-matching
-
-    # show whitespace
-    add-highlighter window/show-whitespaces show-whitespaces -spc ' ' -lf ' ' -nbsp '⋅'
-}
-
-
-############
-# MAPPINGS #
-############
-map global normal '#'  ': comment-line<ret>'
-
-# yank to clipboard
-hook global NormalKey y|d|c %{ nop %sh{ printf %s "$kak_main_reg_dquote" | pbcopy }}
-
-# tab/s-tab to cycle completions
-hook global InsertCompletionShow .* %{
-    map window insert <tab> <c-n>
-    map window insert <s-tab> <c-p>
-}
-hook global InsertCompletionHide .* %{
-    unmap window insert <tab> <c-n>
-    unmap window insert <s-tab> <c-p>
-}
-
-# toggle comments
-map -docstring "comment/uncomment selection" global user 'c' ': comment-line<ret>'
-
-
-
-############
-# COMMANDS #
-############
-define-command toggle-wrap -docstring 'toggle soft wrap' %{
-    try %{
-        add-highlighter window/wrap wrap -word -indent -marker '↪' -width 88
-    } catch %{
-        remove-highlighter window/wrap
-    }
-}
-
-define-command toggle-numbers -docstring 'toggle soft numbers' %{
-    try %{
-        add-highlighter window/numbers number-lines -hlcursor -separator ' '
-    } catch %{
-        remove-highlighter window/numbers
-    }
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(python) %{
+    lsp-enable-window
 }

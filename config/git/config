@@ -1,5 +1,7 @@
 [user]
 	email = benburk@outlook.com
 	name = Ben Burk
+[core]
+    editor = kak
 [push]
 	default = simple

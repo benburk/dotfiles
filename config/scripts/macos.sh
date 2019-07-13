@@ -25,6 +25,7 @@ if test ! $(which brew); then
     echo "Installing homebrew..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+echo "Configuring homebrew..."
 
 brew update
 brew upgrade
@@ -55,7 +56,18 @@ echo "Installing packages..."
 brew install ${brews[@]}
 
 
-# # FISH SHELL
+echo "Configuring Kakoune editor..."
+brew install kakoune --HEAD
+# Install plug.kak
+mkdir -p ~/.config/kak/plugins/
+git clone https://github.com/andreyorst/plug.kak.git ~/.config/kak/plugins/plug.kak
+# Install kak-lsp
+brew install ul/kak-lsp/kak-lsp
+pip install 'python-language-server[all]'
+pip install pyls-black pyls-isort
+
+
+# echo "Configuring Fish shell..."
 # echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 # chsh -s /usr/local/bin/fish
 # fish_config
