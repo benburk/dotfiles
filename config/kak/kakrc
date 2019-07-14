@@ -1,5 +1,6 @@
 set-option global tabstop 4
 
+
 ###########
 # PLUGINS #
 ###########
@@ -15,10 +16,30 @@ plug "andreyorst/smarttab.kak" %{
 }
 
 
-# eval %sh{kak-lsp --kakoune -s $kak_session}
-# lsp-enable
-
 eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(python) %{
+hook global WinSetOption filetype=(python|rust) %{
     lsp-enable-window
+}
+
+# yank to clipboard
+hook global NormalKey y|d|c %{ nop %sh{ printf %s "$kak_main_reg_dquote" | pbcopy }}
+
+
+############
+# COMMANDS #
+############
+define-command toggle-wrap -docstring 'toggle soft wrap' %{
+    try %{
+        add-highlighter window/wrap wrap -word -indent -marker '↪' -width 88
+    } catch %{
+        remove-highlighter window/wrap
+    }
+}
+
+define-command toggle-numbers -docstring 'toggle soft numbers' %{
+    try %{
+        add-highlighter window/numbers number-lines -hlcursor -separator ' '
+    } catch %{
+        remove-highlighter window/numbers
+    }
 }

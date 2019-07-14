@@ -1,5 +1,5 @@
 # Dotfiles
-This is my dotfiles directory.
+This is my dotfiles directory. Word.
 
 ## Similar Projects
 ### Kakoune dotfiles
