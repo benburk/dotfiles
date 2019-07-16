@@ -1,3 +1,4 @@
 .DS_Store
 config/kak/plugins/*
+config/configstore/
 config/qBittorrent/
