@@ -1,9 +1,9 @@
 # Start tmux on login
-if status is-interactive
-and not set -q TMUX
-    # exec tmux
-    exec tmux new -A -s base
-end
+# if status is-interactive
+# and not set -q TMUX
+#     # exec tmux
+#     exec tmux new -A -s base
+# end
 
 
 # Remove welcome message
