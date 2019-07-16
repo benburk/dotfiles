@@ -32,11 +32,6 @@ Some steps of the process are manual
 - Shortcuts -> Mission Control -> ^n to switch to desktop n
 - Dictation -> Shortcut -> Right command key twice (fn key used as hyper in karabiner)
 
-**Safari**
-- Extensions: bitwarden, wipr, hoverzoom
-- Settings -> General -> Uncheck "open safe files after downloading"
-- View -> Show status bar
-
 **Accesibility**
 - Zoom -> Use scroll gesture with modifier keys
 
