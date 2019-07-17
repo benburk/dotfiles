@@ -1,5 +1,10 @@
-# Ben's Dotfiles
+# Ben's dotfiles
 These are my dotfiles. It includes program configurations, as well as other notes and tools about setting up system preferences and developer enviroments.
+
+I maintain this repo as my dotfiles. Suggestions are welcome but I may decline if not of personal value to me.
+
+## Organization
+All dotfiles/configurations exist in the `dotfiles` directory. The configs are then symlinked into their correct location.
 
 ## Installation
 I don't recommend you actually install my dotfiles. Use this project as a reference for building your own.
@@ -8,25 +13,9 @@ git clone https://github.com/benburk/dotfiles.git
 bash dotfiles/bootstrap/macos.sh
 ```
 
-## Features
-- fish as the shell
-
-## References
+## Similar Projects
 - https://github.com/mathiasbynens/dotfiles
 
-
-## Similar Projects
-### Kakoune dotfiles
-- https://github.com/TeddyDD/kakoune-dotfiles
-- https://github.com/alexherbo2/configuration
-- https://github.com/andreyorst/dotfiles
-- https://github.com/eraserhd/dotfiles
-- https://github.com/mawww/config
-- https://github.com/robertmeta/dotfiles
-- https://github.com/robertmeta/kakfiles
-- https://github.com/teddydd/
-- https://github.com/jenterkin/kakconfig
-- https://github.com/eraserhd/dotfiles/blob/develop/kak/config/kak.symlink/kakrc
 
 ### macOS bootstrap
 - https://github.com/pathikrit/mac-setup-script

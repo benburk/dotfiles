@@ -1,5 +1,17 @@
 # Keyboard Layout
+Karabiner elements is used to implement a custom keyboard layout that I designed. It also includes other features such as
+- tap caps for esc, hold for fn
+- `fn + [aeih]` for arrow keys
+- `fn + ret` for end
+- `fn + u` for home
 
+## Design Metrics
+- hand alternation
+- same finger repetition
+- inward/outward rolls
+- seesaw
+
+## Keyboard layout comparison
     QWERTY           443.611 total effort   184.951 positional effort    left right
                        6.800 same finger rp   5.990 shift same finger top 28.0 20.2
      qwertyuiop       52.758 hand alternat.  41.713 shift hand alter. mid 22.1  9.6
@@ -55,3 +67,6 @@
       adjacent/fin.pair 0.52 2.80 2.28                2.48 1.88 1.24   Sh 7.40 5.51
       " " row jump >=2  0.01 0.15 0.05                0.02 0.05 0.02   Sh 1.68 0.64
 
+
+## References
+- https://mdickens.me/typing/theory-of-letter-frequency.html
