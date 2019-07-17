@@ -1,5 +1,19 @@
-# Dotfiles
-This is my dotfiles directory. Word.
+# Ben's Dotfiles
+These are my dotfiles. It includes program configurations, as well as other notes and tools about setting up system preferences and developer enviroments.
+
+## Installation
+I don't recommend you actually install my dotfiles. Use this project as a reference for building your own.
+```bash
+git clone https://github.com/benburk/dotfiles.git
+bash dotfiles/bootstrap/macos.sh
+```
+
+## Features
+- fish as the shell
+
+## References
+- https://github.com/mathiasbynens/dotfiles
+
 
 ## Similar Projects
 ### Kakoune dotfiles

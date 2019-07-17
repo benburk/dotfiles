@@ -5,7 +5,7 @@
 
 
 echo "Symlinking iCloud to home directory..."
-ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloud
+ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
 
 dotfiles() {
     # Pull dotfiles if already exists otherwise clone it
@@ -14,9 +14,9 @@ dotfiles() {
     git clone https://github.com/benburk/dotfiles.git $dotfiles
 
     echo "Symlinking configs..."
-    ln -sfh $dotfiles/tmux.conf ~/.tmux.conf
-    ln -sfh $dotfiles/ignore ~/.ignore
-    ln -sfh $dotfiles/config ~/.config
+    ln -sfh $dotfiles/dotfiles ~/.config
+    ln -sfh $dotfiles/dotfiles/ignore ~/.ignore
+    ln -sfh $dotfiles/dotfiles/tmux.conf ~/.tmux.conf
 }
 
 homebrew() {
