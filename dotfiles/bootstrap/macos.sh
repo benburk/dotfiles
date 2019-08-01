@@ -17,6 +17,7 @@ dotfiles() {
     ln -sfh $dotfiles/dotfiles ~/.config
     ln -sfh $dotfiles/dotfiles/ignore ~/.ignore
     ln -sfh $dotfiles/dotfiles/tmux/tmux.conf ~/.tmux.conf
+    ln -sfh $dotfiles/dotfiles/pylintrc ~/.pylintrc
 }
 
 homebrew() {
@@ -45,9 +46,7 @@ homebrew() {
         iina
         youtube-dl
         google-chrome
-        visual-studio-code
     )
-
 
     echo "Installing packages..."
     brew install ${brews[@]}
@@ -72,6 +71,7 @@ kakoune() {
     mkdir -p ~/.config/kak/plugins/
     git clone https://github.com/andreyorst/plug.kak.git ~/.config/kak/plugins/plug.kak
     # Install kak-lsp
+    # need to have pycodestyle config to suppress annoying messages
     brew install ul/kak-lsp/kak-lsp
     pip install 'python-language-server[all]'
     pip install pyls-black pyls-isort
