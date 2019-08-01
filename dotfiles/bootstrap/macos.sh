@@ -10,13 +10,13 @@ ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
 dotfiles() {
     # Pull dotfiles if already exists otherwise clone it
     echo "Updating dotfiles directory..."
-    dotfiles="$HOME/iCloud/repos/dotfiles"
+    dotfiles="$HOME/iCloud/repos/30_ongoing/dotfiles"
     git clone https://github.com/benburk/dotfiles.git $dotfiles
 
     echo "Symlinking configs..."
     ln -sfh $dotfiles/dotfiles ~/.config
     ln -sfh $dotfiles/dotfiles/ignore ~/.ignore
-    ln -sfh $dotfiles/dotfiles/tmux.conf ~/.tmux.conf
+    ln -sfh $dotfiles/dotfiles/tmux/tmux.conf ~/.tmux.conf
 }
 
 homebrew() {
