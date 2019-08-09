@@ -10,7 +10,7 @@ ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
 dotfiles() {
     # Pull dotfiles if already exists otherwise clone it
     echo "Updating dotfiles directory..."
-    dotfiles="$HOME/iCloud/repos/30_ongoing/dotfiles"
+    dotfiles="$HOME/iCloud/repos/10_completed/dotfiles"
     git clone https://github.com/benburk/dotfiles.git $dotfiles
 
     echo "Symlinking configs..."

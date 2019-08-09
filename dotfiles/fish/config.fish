@@ -16,7 +16,8 @@ set -x FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -x FZF_ALT_C_COMMAND 'fd --follow --type directory ""'
 
 
-set -x EDITOR kak
+set -Ux EDITOR kak
+# set -Ux TERM xterm-kitty
 
 source (conda info --root)/etc/fish/conf.d/conda.fish
 
