@@ -10,7 +10,7 @@ ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
 dotfiles() {
     # Pull dotfiles if already exists otherwise clone it
     echo "Updating dotfiles directory..."
-    dotfiles="$HOME/iCloud/repos/10_completed/dotfiles"
+    dotfiles="$HOME/iCloud/repos/40_ongoing/dotfiles"
     git clone https://github.com/benburk/dotfiles.git $dotfiles
 
     echo "Symlinking configs..."
@@ -52,15 +52,21 @@ homebrew() {
     brew install ${brews[@]}
 }
 
+haskell() {
+    echo "Configuring haskell..."
+    brew install haskell-stack
+    stack build intero
+}
 
 python() {
     echo "Configuring python..."
+    brew cask install anaconda
+    # anaconda support
+    # set -U fish_user_paths /anaconda3/bin $fish_user_paths
     pips=(
         black
         pylint
     )
-    # anaconda support
-    # set -U fish_user_paths /anaconda3/bin $fish_user_paths
 }
 
 
@@ -129,7 +135,7 @@ system() {
 
 main() {
     dotfiles
-    system
+    # system
     echo "bootstrapping complete!"
 }
 main

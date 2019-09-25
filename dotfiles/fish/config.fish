@@ -1,10 +1,10 @@
 # Start tmux on login
-# if status is-interactive
-# and not set -q TMUX
-#     # exec tmux
-#     exec tmux new -A -s base
-# end
-
+if test "$TERM" = "xterm-kitty"
+    if status is-interactive
+        and not set -q TMUX
+        exec tmux new -A -s base
+    end
+end
 
 # Remove welcome message
 set fish_greeting
@@ -17,7 +17,6 @@ set -x FZF_ALT_C_COMMAND 'fd --follow --type directory ""'
 
 
 set -Ux EDITOR kak
-# set -Ux TERM xterm-kitty
 
 source (conda info --root)/etc/fish/conf.d/conda.fish
 
