@@ -22,11 +22,13 @@ plug "alexherbo2/auto-pairs.kak" %{
 }
 
 plug "ul/kak-lsp" do %{
+    # upgrade kak-lsp through homebrew (brew upgrade kak-lsp)
     ln -sf target/release/kak-lsp ~/.cargo/bin/
 } config %{
     hook global WinSetOption filetype=(python|rust) %{
         lsp-enable-window
     }
+    map global user "l" ": enter-user-mode lsp<ret>" -docstring "LSP mode"
 }
 
 
@@ -34,24 +36,29 @@ plug "ul/kak-lsp" do %{
 # ======
 set-option global tabstop 4
 set-option global indentwidth 4
+# auto reload the buffers when an external modification is detected
+set-option global autoreload yes
+
 
 
 # APPEARANCE
 # ==========
-hook global WinCreate .* %{
-    add-highlighter window/matching show-matching
-    add-highlighter window/show-whitespaces show-whitespaces -spc " " -lf " "
-}
+add-highlighter global/ show-matching
+add-highlighter global/ show-whitespaces -spc " " -lf " "
 
 
 # MAPPINGS
 # ========
-map global user "c" ": comment-line<ret>" -docstring "comment/uncomment selection"
+map global user "c" ": comment-line<ret>"   -docstring "Comment/Uncomment selection"
+map global user "n" ": toggle-numbers<ret>" -docstring "Toggle line numbers"
+map global user "w" ": toggle-wrap<ret>"    -docstring "Toggle soft line wrap"
 
-# yank to clipboard
+# Yank and Paste to system clipboard
 hook global NormalKey y|d|c %{ nop %sh{ printf %s "$kak_main_reg_dquote" | pbcopy }}
+map global normal P "! pbpaste<ret>"
+map global normal p "<a-!> pbpaste<ret>"
 
-# tab/s-tab to cycle completions
+# Use tab/s-tab to cycle completions
 hook global InsertCompletionShow .* %{
     map window insert <tab> <c-n>
     map window insert <s-tab> <c-p>
@@ -64,18 +71,28 @@ hook global InsertCompletionHide .* %{
 
 # COMMANDS
 # ========
-define-command toggle-wrap -docstring "toggle soft wrap" %{
+define-command toggle-wrap -docstring "Toggle soft line wrap" %{
     try %{
-        add-highlighter window/wrap wrap -word -indent -marker "↪" -width 88
+        add-highlighter buffer/wrap wrap -word -indent -marker "↪" -width 88
     } catch %{
-        remove-highlighter window/wrap
+        remove-highlighter buffer/wrap
     }
 }
 
-define-command toggle-numbers -docstring "toggle soft numbers" %{
+define-command toggle-numbers -docstring "Toggle line numbers" %{
     try %{
-        add-highlighter window/numbers number-lines -hlcursor -separator " "
+        add-highlighter buffer/numbers number-lines -hlcursor -separator " "
     } catch %{
-        remove-highlighter window/numbers
+        remove-highlighter buffer/numbers
     }
 }
+
+# define-command -docstring "Split vertically" sp %{
+#   tmux-terminal-vertical kak -c %val{session}
+# }
+
+# define-command -docstring "Split horizontally" vs %{
+#   tmux-terminal-horizontal kak -c %val{session}
+# }
+
+

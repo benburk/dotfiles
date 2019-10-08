@@ -17,6 +17,7 @@ https://github.com/71/dance/
 - https://github.com/teddydd/
 - https://github.com/jenterkin/kakconfig
 - https://github.com/eraserhd/dotfiles/blob/develop/kak/config/kak.symlink/kakrc
+- https://github.com/JJK96/kakoune-config/blob/master/kakrc
 
 
 Kakoune Plugins
