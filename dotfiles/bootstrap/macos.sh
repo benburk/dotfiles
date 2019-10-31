@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
+
 # macOS bootstrap script
 # idempotent, directory-independent
-# hope is that if things aren't working I can retrace my steps with this
 
 
-echo "Symlinking iCloud to home directory..."
+# Symlink iCloud to home directory
 ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
 
 dotfiles() {
     # Pull dotfiles if already exists otherwise clone it
     echo "Updating dotfiles directory..."
-    dotfiles="$HOME/iCloud/repos/40_ongoing/dotfiles"
+    dotfiles="$HOME/iCloud/projects/40_ongoing/dotfiles"
     git clone https://github.com/benburk/dotfiles.git $dotfiles
 
     echo "Symlinking configs..."
@@ -45,7 +45,7 @@ homebrew() {
         karabiner-elements
         iina
         youtube-dl
-        google-chrome
+        firefox
     )
 
     echo "Installing packages..."
@@ -61,8 +61,6 @@ haskell() {
 python() {
     echo "Configuring python..."
     brew cask install anaconda
-    # anaconda support
-    # set -U fish_user_paths /anaconda3/bin $fish_user_paths
     pips=(
         black
         pylint
@@ -86,14 +84,16 @@ kakoune() {
 
 fish() {
     echo "Configuring Fish shell..."
-    # echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-    # chsh -s /usr/local/bin/fish
-    # fish_config
+    chsh -s $(which fish)
 }
 
 
 system() {
     echo "Configuring System Preferences..."
+    # Reference...
+    # https://gist.github.com/mrichman/f5c0c6f0c0873392c719265dfd209e12
+    # https://github.com/pawelgrzybek/dotfiles/blob/master/setup-macos.sh
+    # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
     # Finder > Preferences > Show all filename extensions
     defaults write NSGlobalDomain AppleShowAllExtensions -bool true
