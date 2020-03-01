@@ -2,6 +2,43 @@
 
 # macOS bootstrap script
 # idempotent, directory-independent
+# 1. download and symlink dotfiles
+# 2. configure a few system preferences
+
+: '
+## Install a fresh copy of macOS
+1. Boot into recovery mode (hold `cmd+r` during reboot)
+2. Format the boot drive and install macOS from scratch
+
+3. Install command line tools
+Includes `clang`, `gcc`, `git`, and `make` among others.
+You can view all of them by browsing `/Library/Developer/CommandLineTools`.
+Install them with:
+sudo xcode-select --install
+
+4. Install homebrew
+5. Install homebrew packages fzf rg fd git
+6. Install homebrew casks karabiner-elements iina qbittorrent
+
+
+7. Some other settings
+Set default applications
+- file with type -> get info -> open with -> change all
+
+Manual:
+- finder -> new window shows icloud
+- safari -> show status bar
+- dock -> dont show recent apps
+- trackpad -> secondary click -> click in bottom right corner
+- Keyboard -> Shortcuts -> Mission Control -> ^n to switch to desktop n
+- Keyboard -> Dictation -> Shortcut -> Right command key twice
+- Accessibility -> Zoom -> Use scroll gesture with modifier keys
+
+## Links
+- [Hardening macOS](https://blog.bejarano.io/hardening-macos.html)
+- [macOS setup guide](https://sourabhbajaj.com/mac-setup/)
+'
+
 
 
 # Symlink iCloud to home directory
@@ -10,87 +47,20 @@ ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
 dotfiles() {
     # Pull dotfiles if already exists otherwise clone it
     echo "Updating dotfiles directory..."
-    dotfiles="$HOME/iCloud/projects/40_ongoing/dotfiles"
-    git clone https://github.com/benburk/dotfiles.git $dotfiles
+    dotfiles="$HOME/icloud/projects/30_ongoing/dotfiles"
+    # git clone https://github.com/benburk/dotfiles.git $dotfiles
 
     echo "Symlinking configs..."
-    ln -sfh $dotfiles/dotfiles ~/.config
+    # ln -sfh $dotfiles/dotfiles/tmux/tmux.conf ~/.tmux.conf
+    ln -sfh $dotfiles/dotfiles/ ~/.config
     ln -sfh $dotfiles/dotfiles/ignore ~/.ignore
-    ln -sfh $dotfiles/dotfiles/tmux/tmux.conf ~/.tmux.conf
     ln -sfh $dotfiles/dotfiles/pylintrc ~/.pylintrc
-}
-
-homebrew() {
-    # Install homebrew if not installed
-    if test ! $(which brew); then
-        echo "Installing homebrew..."
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
-    echo "Configuring homebrew..."
-
-    brew update
-    brew upgrade
-
-    brews=(
-        fish
-        fd
-        rg
-        fzf
-        tmux
-        ranger
-        git
-    )
-
-    casks=(
-        karabiner-elements
-        iina
-        youtube-dl
-        firefox
-    )
-
-    echo "Installing packages..."
-    brew install ${brews[@]}
-}
-
-haskell() {
-    echo "Configuring haskell..."
-    brew install haskell-stack
-    stack build intero
-}
-
-python() {
-    echo "Configuring python..."
-    brew cask install anaconda
-    pips=(
-        black
-        pylint
-    )
-}
-
-
-kakoune() {
-    echo "Configuring Kakoune editor..."
-    brew install kakoune --HEAD
-    # Install plug.kak
-    mkdir -p ~/.config/kak/plugins/
-    git clone https://github.com/andreyorst/plug.kak.git ~/.config/kak/plugins/plug.kak
-    # Install kak-lsp
-    # need to have pycodestyle config to suppress annoying messages
-    brew install ul/kak-lsp/kak-lsp
-    pip install 'python-language-server[all]'
-    pip install pyls-black pyls-isort
-}
-
-
-fish() {
-    echo "Configuring Fish shell..."
-    chsh -s $(which fish)
 }
 
 
 system() {
     echo "Configuring System Preferences..."
-    # Reference...
+    # Links...
     # https://gist.github.com/mrichman/f5c0c6f0c0873392c719265dfd209e12
     # https://github.com/pawelgrzybek/dotfiles/blob/master/setup-macos.sh
     # https://github.com/mathiasbynens/dotfiles/blob/master/.macos

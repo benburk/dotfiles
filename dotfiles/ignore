@@ -1,5 +1,9 @@
-Library
-Movies
-Music
-Pictures
-Public
+# exclude everything
+/*
+
+# include desired directories
+!/Applications
+!/Desktop
+!/Documents
+!/Downloads
+!/icloud
