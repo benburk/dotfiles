@@ -16,11 +16,6 @@ You can view all of them by browsing `/Library/Developer/CommandLineTools`.
 Install them with:
 sudo xcode-select --install
 
-4. Install homebrew
-5. Install homebrew packages fzf rg fd git
-6. Install homebrew casks karabiner-elements iina qbittorrent
-
-
 7. Some other settings
 Set default applications
 - file with type -> get info -> open with -> change all
@@ -28,7 +23,6 @@ Set default applications
 Manual:
 - finder -> new window shows icloud
 - safari -> show status bar
-- dock -> dont show recent apps
 - trackpad -> secondary click -> click in bottom right corner
 - Keyboard -> Shortcuts -> Mission Control -> ^n to switch to desktop n
 - Keyboard -> Dictation -> Shortcut -> Right command key twice
@@ -43,6 +37,14 @@ Manual:
 
 # Symlink iCloud to home directory
 ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
+
+homebrew() {
+    # install homebrew
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    # install packages
+    brew install fzf rg fd git
+    brew install cask karabiner-elements iina qbittorrent
+}
 
 dotfiles() {
     # Pull dotfiles if already exists otherwise clone it
@@ -65,6 +67,7 @@ system() {
     # https://github.com/pawelgrzybek/dotfiles/blob/master/setup-macos.sh
     # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
+    # FINDER
     # Finder > Preferences > Show all filename extensions
     defaults write NSGlobalDomain AppleShowAllExtensions -bool true
     # Finder > Preferences > Show warning before changing an extension
@@ -74,6 +77,7 @@ system() {
     # Finder > View > Show Path Bar
     defaults write com.apple.finder ShowPathbar -bool true
 
+    # SAFARI
     # Safari > General > Open safe files after downloading
     defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
     # Safari > Autofill > Autofill webforms
@@ -82,13 +86,20 @@ system() {
     defaults write com.apple.Safari AutoFillCreditCardData -bool false
     defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
 
+    # DOCK
+    # Sysprefs > Dock > Show recent applications
+    defaults write com.apple.dock show-recents -bool no
+    # defaults write com.apple.dock recent-apps -array # intentionally empty
+    # Sysprefs > Dock > Automatically hide and show the Dock:
+    defaults write com.apple.dock autohide -bool true
+
     # Sysprefs > Trackpad > Tap to click
     defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
     # Sysprefs > Mission Control > Auto rearrange spaces based on most recent use
     defaults write com.apple.dock mru-spaces -bool false
-    # Sysprefs > Dock > Automatically hide and show the Dock:
-    defaults write com.apple.dock autohide -bool true
 
+
+    # AUTOCORRECT
     # Disable automatic capitalization as it’s annoying when typing code
     defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
     # Disable smart dashes as they’re annoying when typing code
