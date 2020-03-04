@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-# macOS bootstrap script
-# idempotent, directory-independent
-# 1. download and symlink dotfiles
-# 2. configure a few system preferences
-
 : '
-## Install a fresh copy of macOS
+macOS bootstrap script
+idempotent, directory-independent
+
+# Install a fresh copy of macOS
 1. Boot into recovery mode (hold `cmd+r` during reboot)
 2. Format the boot drive and install macOS from scratch
 
