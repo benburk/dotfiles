@@ -31,30 +31,12 @@ Manual:
 - [macOS setup guide](https://sourabhbajaj.com/mac-setup/)
 '
 
-
-
-# Symlink iCloud to home directory
-ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
-
 homebrew() {
     # install homebrew
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     # install packages
     brew install fzf rg fd git
     brew install cask karabiner-elements iina qbittorrent
-}
-
-dotfiles() {
-    # Pull dotfiles if already exists otherwise clone it
-    echo "Updating dotfiles directory..."
-    dotfiles="$HOME/icloud/projects/30_ongoing/dotfiles"
-    # git clone https://github.com/benburk/dotfiles.git $dotfiles
-
-    echo "Symlinking configs..."
-    # ln -sfh $dotfiles/dotfiles/tmux/tmux.conf ~/.tmux.conf
-    ln -sfh $dotfiles/dotfiles/ ~/.config
-    ln -sfh $dotfiles/dotfiles/ignore ~/.ignore
-    ln -sfh $dotfiles/dotfiles/pylintrc ~/.pylintrc
 }
 
 
@@ -113,7 +95,6 @@ system() {
 }
 
 main() {
-    dotfiles
     # system
     echo "bootstrapping complete!"
 }

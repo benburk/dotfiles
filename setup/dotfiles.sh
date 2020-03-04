@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-dotfiles="$HOME/icloud/projects/30_ongoing/dotfiles"
+# Symlink iCloud to home directory
+ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
 
 # get path of the dotfiles folder
 # will look like ..dotfiles/setup/..
