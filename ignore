@@ -1,0 +1,9 @@
+# exclude everything
+/*
+
+# whitelist directories
+!/Applications
+!/Desktop
+!/Documents
+!/Downloads
+!/SynologyDrive
