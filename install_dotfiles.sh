@@ -33,3 +33,7 @@ ln -sf "${dotfiles}/vscode/settings.json" ~/Library/Application\ Support/Code/Us
 # git
 ln -sf "${dotfiles}/git/.gitconfig" ~/.gitconfig
 ln -sf "${dotfiles}/git/.gitignore_global" ~/.gitignore_global
+
+# vale
+ln -sf "${dotfiles}/vale/vale.ini" ~/.vale.ini
+ln -sf "${dotfiles}/vale/styles" ~/vale_styles
