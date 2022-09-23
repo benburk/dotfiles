@@ -50,5 +50,8 @@ disable = [
 ]
 good-names = "i,j,k,_,T"
 
+[tool.pylint.similarities]
+ignore-imports = true  # Ignore imports when computing similarities.
+
 [tool.pytest.ini_options]
 python_files = "*.py"
