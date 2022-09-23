@@ -1,0 +1,14 @@
+# System
+.DS_Store
+.vscode
+
+# Python
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.coverage
+
+# Rust
+debug/
+target/
+Cargo.lock

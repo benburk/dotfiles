@@ -6,5 +6,12 @@
     "window.zoomLevel": 1,
     "editor.inlineSuggest.enabled": true,
     "explorer.confirmDelete": false,
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "editor.minimap.enabled": false,
+
+    // PYTHON
+    "python.formatting.provider": "black",
+
+    // C++
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Chromium, IndentWidth: 4 }"
 }

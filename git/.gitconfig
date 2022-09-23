@@ -1,0 +1,9 @@
+[user]
+        name = Ben Burk
+        email = 21958895+benburk@users.noreply.github.com
+        username = benburk
+[init]
+        defaultBranch = main
+[core]
+        editor = vim
+        excludesfile = /Users/benburk/.gitignore_global
