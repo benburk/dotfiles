@@ -44,4 +44,5 @@ pycheck() {
     isort --settings-path="$config" --diff "${files[@]}"
     pylint --rcfile="$config" "${files[@]}"
     mypy --config-file="$config" "${files[@]}"
+    # refurb "${files[@]}"
 }

@@ -17,6 +17,7 @@ show_error_codes = true
 
 [tool.pylint.MASTER]
 # http://pylint.pycqa.org/en/latest/technical_reference/extensions.html
+# enable-all-extensions maybe?
 load-plugins = [
     "pylint.extensions.broad_try_clause",
     "pylint.extensions.code_style",
@@ -37,7 +38,7 @@ load-plugins = [
     "pylint.extensions.docstyle",
     "pylint.extensions.empty_comment",
 ]
-
+output-format = "colorized"
 default-docstring-type = "sphinx"
 
 [tool.pylint.messages_control]
