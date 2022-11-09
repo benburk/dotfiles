@@ -13,11 +13,10 @@ mkdir -p ~/.config/karabiner/assets/complex_modifications/
 ln -sf "${dotfiles}/karabiner/bold.json" ~/.config/karabiner/assets/complex_modifications/bold.json
 
 # zsh
-ln -sf "${dotfiles}/zsh/.zshrc" ~/.zshrc
+ln -sf "${dotfiles}/zsh/zshrc" ~/.zshrc
 
-# loose files
-ln -sf "${dotfiles}/.ignore" ~/.ignore
-ln -sf "${dotfiles}/.gitignore_global" 
+# fzf ignore
+ln -sf "${dotfiles}/ignore" ~/.ignore
 
 # python
 # default linting/formatting commands and settings
@@ -25,14 +24,14 @@ ln -sf "${dotfiles}/python/pyproject.toml" ~/pyproject.toml
 ln -sf "${dotfiles}/python/tasks.py" ~/tasks.py
 
 # tmux
-ln -sf "${dotfiles}/tmux/.tmux.conf" ~/.tmux.conf
+ln -sf "${dotfiles}/tmux/tmux.conf" ~/.tmux.conf
 
 # vscode
 ln -sf "${dotfiles}/vscode/settings.json" ~/Library/Application\ Support/Code/User/settings.json
 
 # git
-ln -sf "${dotfiles}/git/.gitconfig" ~/.gitconfig
-ln -sf "${dotfiles}/git/.gitignore_global" ~/.gitignore_global
+ln -sf "${dotfiles}/git/gitconfig" ~/.gitconfig
+ln -sf "${dotfiles}/git/gitignore_global" ~/.gitignore_global
 
 # vale
 ln -sf "${dotfiles}/vale/vale.ini" ~/.vale.ini

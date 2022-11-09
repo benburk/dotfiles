@@ -1,6 +1,7 @@
 # System
 .DS_Store
 .vscode
+notes/
 
 # Python
 __pycache__/
