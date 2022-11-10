@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # script is idempotent
 
-# Symlink iCloud to home directory
-ln -sfh ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/icloud
-
 # get path of the dotfiles folder
 # will look like ..dotfiles/setup/..
 dotfiles="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -16,7 +13,7 @@ ln -sf "${dotfiles}/karabiner/bold.json" ~/.config/karabiner/assets/complex_modi
 ln -sf "${dotfiles}/zsh/zshrc" ~/.zshrc
 
 # fzf ignore
-ln -sf "${dotfiles}/ignore" ~/.ignore
+ln -sf "${dotfiles}/fzf/ignore" ~/.ignore
 
 # python
 # default linting/formatting commands and settings
