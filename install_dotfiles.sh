@@ -16,9 +16,7 @@ ln -sf "${dotfiles}/zsh/zshrc" ~/.zshrc
 ln -sf "${dotfiles}/fzf/ignore" ~/.ignore
 
 # python
-# default linting/formatting commands and settings
 ln -sf "${dotfiles}/python/pyproject.toml" ~/pyproject.toml
-ln -sf "${dotfiles}/python/tasks.py" ~/tasks.py
 
 # tmux
 ln -sf "${dotfiles}/tmux/tmux.conf" ~/.tmux.conf
