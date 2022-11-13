@@ -32,17 +32,17 @@ pyfmt() {
     local config=$(findup "pyproject.toml")
     local files=( $(find . -type f -name '*.py') )
 
-    black --config="$config" "${files[@]}"
-    isort --settings-path="$config" "${files[@]}"
+    python -m black --config="$config" "${files[@]}"
+    python -m isort --settings-path="$config" "${files[@]}"
 }
 
 pycheck() {
     local config=$(findup "pyproject.toml")
     local files=( $(find . -type f -name '*.py') )
 
-    black --config="$config" --diff "${files[@]}"
-    isort --settings-path="$config" --diff "${files[@]}"
-    pylint --rcfile="$config" "${files[@]}"
-    mypy --config-file="$config" "${files[@]}"
+    python -m black --config="$config" --diff "${files[@]}"
+    python -m isort --settings-path="$config" --diff "${files[@]}"
+    python -m pylint --rcfile="$config" "${files[@]}"
+    python -m mypy --config-file="$config" "${files[@]}"
     # refurb "${files[@]}"
 }
