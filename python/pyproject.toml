@@ -38,15 +38,16 @@ load-plugins = [
     "pylint.extensions.docstyle",
     "pylint.extensions.empty_comment",
 ]
-output-format = "colorized"
+output-format = "colorized"  # add colors to output
 default-docstring-type = "sphinx"
 
 [tool.pylint.messages_control]
 disable = [
     "logging-fstring-interpolation",
     "compare-to-zero",
-    "no-member",  # checked by mypy's attr-defined
-    "missing-module-docstring"
+    "no-member",  # handled by mypy's attr-defined
+    "missing-module-docstring",
+    "wrong-import-order",  # handled by isort
     
 ]
 good-names = "i,j,k,_,T"
