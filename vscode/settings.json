@@ -18,6 +18,7 @@
         "*": true,
         "yaml": false,
         "plaintext": true,
-        "markdown": false
-    }
+        "markdown": true
+    },
+    "workbench.tree.indent": 20
 }
