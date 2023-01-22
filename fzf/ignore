@@ -1,0 +1,11 @@
+# ignore file recognized by fzf
+
+# exclude everything
+/*
+
+# whitelist directories
+!/Applications
+!/Desktop
+!/Documents
+!/Downloads
+!/SynologyDrive

@@ -1,0 +1,24 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Dracula",
+    "window.zoomLevel": 1,
+    "editor.inlineSuggest.enabled": true,
+    "explorer.confirmDelete": false,
+    "workbench.activityBar.visible": false,
+    "editor.minimap.enabled": false,
+
+    // PYTHON
+    "python.formatting.provider": "black",
+
+    // C++
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Chromium, IndentWidth: 4 }",
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": true
+    },
+    "workbench.tree.indent": 20
+}

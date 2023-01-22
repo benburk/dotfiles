@@ -1,0 +1,8 @@
+[user]
+        email = 123149780+chariotsofiron@users.noreply.github.com
+        username = chariotsofiron
+[init]
+        defaultBranch = main
+[core]
+        editor = vim
+        excludesfile = ~/.gitignore_global
