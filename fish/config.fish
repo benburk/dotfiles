@@ -1,5 +1,6 @@
 #!/usr/bin/env fish
 
+fish_add_path --move /usr/local/bin
 fish_add_path --move /usr/local/opt/fzf/bin
 fish_add_path --move $HOME/.cargo/bin
 
