@@ -7,6 +7,8 @@ set -gx FZF_ALT_C_COMMAND "fd --type d"
 set -gx FZF_ALT_C_OPTS "--preview 'tree -C {}'"
 
 
+fish_add_path --move ~/.cargo/bin
+
 if status is-interactive
     set fish_greeting # Suppress fish welcome message
     fish_config theme choose "Nord"

@@ -5,5 +5,12 @@ line-number = "relative"
 true-color = true
 auto-save = true
 
+# soft-wrapping
+soft-wrap.enable = true
+soft-wrap.wrap-at-text-width = true
+text-width = 80
+rulers = [80]
+
 [keys.normal.space]
 z = ":toggle soft-wrap.enable"
+'=' = ":format"

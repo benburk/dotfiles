@@ -2,4 +2,5 @@
 [[language]]
 name = "python"
 formatter = { command = "ruff", args = ["format", "-"] }
-language-servers = [ "pyright-langserver" ]
+language-servers = [ "pyright" ]
+
