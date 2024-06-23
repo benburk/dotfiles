@@ -2,7 +2,13 @@ theme "catppuccin-frappe"
 
 keybinds {
     normal {
-		unbind "Ctrl t"
-		bind "Ctrl b" { SwitchToMode "Tab"; }
+        unbind "Ctrl t"
+        bind "Ctrl b" { SwitchToMode "Tab"; }
+
+        // we use arrow keys
+        unbind "Alt h"
+        unbind "Alt j"
+        unbind "Alt k"
+        unbind "Alt l"
     }
 }
