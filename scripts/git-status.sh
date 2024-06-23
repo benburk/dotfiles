@@ -6,3 +6,4 @@ for file in $(fd $1 -d 1); do
     git status --porcelain
     cd ..
 done
+d
