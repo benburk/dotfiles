@@ -1,9 +1,13 @@
-for file in $(fd $1 -d 1); do
-    cd $file
-    if [[ $(git status --porcelain) ]]; then
-        echo -e "\033[0;31m${file}\033[0m"
+#!/bin/bash
+# a script to print the names of all git repos with uncommitted changes
+for repo in $(fd "\.git$" --hidden --absolute-path --type d); do
+    dir=$(dirname "$repo")
+    cd "$dir"
+    status=$(git status --porcelain)
+    if [[ $status ]]; then
+        # if there are changes, print the directory name in red
+        echo -e "\033[0;31m${dir}\033[0m"
+        echo "$status"
     fi
-    git status --porcelain
     cd ..
 done
-d
