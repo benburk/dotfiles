@@ -4,7 +4,7 @@
     "files.autoSave": "afterDelay",
     "workbench.colorTheme": "Dracula",
     "window.zoomLevel": 1,
-    "editor.inlineSuggest.enabled": true,
+    // "editor.inlineSuggest.enabled": true,
     "explorer.confirmDelete": false,
     "workbench.activityBar.visible": false,
     "editor.minimap.enabled": false,
@@ -20,5 +20,14 @@
         "plaintext": true,
         "markdown": true
     },
-    "workbench.tree.indent": 20
+    "workbench.tree.indent": 20,
+    
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 88,
+
+    // markdown
+    "[markdown]": {
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 88
+    }
 }
