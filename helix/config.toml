@@ -1,9 +1,9 @@
-theme = "nord"
+theme = "catppuccin_frappe"
 
 [editor]
 line-number = "relative"
 true-color = true
-auto-pairs = false
+auto-save = true
 
 [keys.normal.space]
 z = ":toggle soft-wrap.enable"

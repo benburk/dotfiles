@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# This script symlinks the config files to their correct locations and names
+# It is idempotent
+
 # set dotfiles (realpath (status dirname))
 dotfiles=$(realpath "$(dirname "$0")")
 echo $dotfiles
@@ -13,12 +16,13 @@ mkdir -p $HOME/.config/karabiner/assets/complex_modifications/
 ln -sf $dotfiles/karabiner/layer.json $HOME/.config/karabiner/assets/complex_modifications/
 
 # git
-ln -sf $dotfiles/git/gitconfig "$HOME/.gitconfig"
+ln -sf $dotfiles/git/config.toml "$HOME/.gitconfig"
 ln -sf $dotfiles/git/gitignore_global "$HOME/.gitignore_global"
 
 # helix
 mkdir -p $HOME/.config/helix
 ln -sf $dotfiles/helix/config.toml "$HOME/.config/helix/config.toml"
+ln -sf $dotfiles/helix/languages.toml "$HOME/.config/helix/languages.toml"
 
 # alacritty
 mkdir -p $HOME/.config/alacritty
@@ -28,4 +32,10 @@ ln -sf $dotfiles/alacritty/alacritty.yml "$HOME/.config/alacritty/alacritty.yml"
 mkdir -p $HOME/.config/kitty
 ln -sf $dotfiles/kitty/kitty.conf "$HOME/.config/kitty/kitty.conf"
 
+# zellij
+mkdir -p $HOME/.config/zellij
+ln -sf $dotfiles/zellij/config.kdl "$HOME/.config/zellij/config.kdl"
+
+# python
+ln -sf $dotfiles/python/pyproject.toml "$HOME/pyproject.toml"
 

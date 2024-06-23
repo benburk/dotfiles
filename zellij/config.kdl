@@ -1,0 +1,8 @@
+theme "catppuccin-frappe"
+
+keybinds {
+    normal {
+		unbind "Ctrl t"
+		bind "Ctrl b" { SwitchToMode "Tab"; }
+    }
+}
