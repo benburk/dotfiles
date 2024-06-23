@@ -12,3 +12,6 @@ ignore = [
     "ISC001", # single-line-implicit-string-concatenation
     "FA102", # import annotations
 ]
+
+[tool.ruff.format]
+skip-magic-trailing-comma = true

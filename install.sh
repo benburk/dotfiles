@@ -41,3 +41,6 @@ ln -sf $dotfiles/zellij/config.kdl "$HOME/.config/zellij/config.kdl"
 # python
 ln -sf $dotfiles/python/pyproject.toml "$HOME/pyproject.toml"
 
+# vale
+ln -sf $dotfiles/vale/vale.ini "$HOME/.vale.ini"
+ln -sf $dotfiles/vale/vale_styles "$HOME/vale_styles"
