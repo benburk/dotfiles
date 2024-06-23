@@ -7,7 +7,7 @@ dotfiles="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # karabiner elements
 mkdir -p ~/.config/karabiner/assets/complex_modifications/
-ln -sf "${dotfiles}/karabiner/bold.json" ~/.config/karabiner/assets/complex_modifications/bold.json
+ln -sf "${dotfiles}/karabiner/layer.json" ~/.config/karabiner/assets/complex_modifications/
 
 # zsh
 ln -sf "${dotfiles}/zsh/zshrc" ~/.zshrc
@@ -30,4 +30,4 @@ ln -sf "${dotfiles}/git/gitignore_global" ~/.gitignore_global
 
 # vale
 ln -sf "${dotfiles}/vale/vale.ini" ~/.vale.ini
-ln -sf "${dotfiles}/vale/styles" ~/vale_styles
+ln -sf "${dotfiles}/vale/vale_styles" ~/

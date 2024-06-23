@@ -39,6 +39,9 @@ pip install "black==22.8.0" "isort==5.10.1" "mypy==0.991" "pylint==2.15.3" "pyte
 
 # C++ programming language
 brew install cmake conan llvm
+# symlink clang-format and clang-tidy to /usr/local/bin
+ln -s "$(brew --prefix llvm)/bin/clang-format" "/usr/local/bin/clang-format"
+ln -s "$(brew --prefix llvm)/bin/clang-tidy" "/usr/local/bin/clang-tidy"
 
 
 # Dotfiles

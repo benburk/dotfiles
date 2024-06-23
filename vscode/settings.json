@@ -35,5 +35,8 @@
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 88
     },
-    "editor.inlineSuggest.enabled": true
+    "editor.inlineSuggest.enabled": true,
+    "[python]": {
+        "editor.formatOnType": true
+    }
 }
