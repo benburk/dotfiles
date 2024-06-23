@@ -1,9 +1,6 @@
 {
     "title": "Caps lock uncapped",
-    "author": "chariotsofiron",
-    "json_url": "https://raw.githubusercontent.com/chariotsofiron/dotfiles/main/karabiner/capslock.json",
     "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/chariotsofiron/dotfiles/main/karabiner/capslock.json",
-    "repo": "https://github.com/chariotsofiron/dotfiles",
     "rules": [
         {
             "description": "Caps lock",
