@@ -133,7 +133,7 @@
                         "modifiers": {"mandatory": ["fn"]}
                     },
                     "to": [
-                        {"key_code": "right_arrow", "modifiers": ["command"]},
+                        {"key_code": "right_arrow", "modifiers": ["fn"]},
                         {"key_code": "return_or_enter"}
                     ]
                 },
@@ -145,7 +145,7 @@
                         "modifiers": {"mandatory": ["fn", "shift"]}
                     },
                     "to": [
-                        {"key_code": "left_arrow", "modifiers": ["command"]},
+                        {"key_code": "left_arrow", "modifiers": ["fn"]},
                         {"key_code": "keypad_enter"},
                         {"key_code": "up_arrow"}
                     ]
