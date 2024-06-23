@@ -5,6 +5,9 @@ username = "chariotsofiron"
 [init]
 defaultBranch = "main"
 
+[delta]
+side-by-side = true
+
 [core]
 editor = "hx"
 pager = "delta"
