@@ -14,8 +14,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 
 # Install homebrew (https://brew.sh)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# Install command line tools I like
-brew install rg fd fzf git vale helix tree
+
+# modern replacements for unix tools in rust
+brew install rg fd sd exa bat
+
+# other tools I like
+brew install fzf jq git vale helix tree
 # Quick-look plugins https://www.quicklookplugins.com
 brew install --cask qlcolorcode qlstephen
 # Utilities

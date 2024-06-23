@@ -1,6 +1,10 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/usr/local/opt/python/libexec/bin/:$PATH"
 
+# secrets
+# security add-generic-password -a "$USER" -s <key> -w <value>
+export OPENAI_API_KEY=$(security find-generic-password -a "$USER" -s "openai_api_key" -w)
+
 ZSH_THEME="robbyrussell"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
@@ -12,6 +16,7 @@ FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 FZF_ALT_C_COMMAND='fd --follow --no-ignore-vcs --type directory ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# use extended regular expressions
 alias grep='grep -E '
 
 findup() {
@@ -45,4 +50,20 @@ pycheck() {
     python -m pylint --rcfile="$config" "${files[@]}"
     python -m mypy --config-file="$config" "${files[@]}"
     # refurb "${files[@]}"
+}
+
+chatgpt() {
+    # model: gpt-3.5-turbo, gpt-4
+    local response=$(curl https://api.openai.com/v1/chat/completions -s \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    -d '{
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": "'$1'"}],
+        "temperature": 0.7
+    }')
+
+    # replace newlines since jq can't parse them, and remove the trailing newline
+    local parsed=$(echo "$response" | sd '\n' '\\n' | sd '\\n$' '' | jq -r '.choices[0].message.content' | bat)
+    echo "$parsed"
 }
