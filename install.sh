@@ -9,7 +9,9 @@ echo $dotfiles
 
 # fish
 mkdir -p $HOME/.config/fish
+mkdir -p $HOME/.config/fish/themes/
 ln -sf $dotfiles/fish/config.fish $HOME/.config/fish/
+ln -sf $dotfiles/fish/catppuccin-frappe.theme $HOME/.config/fish/themes/
 
 # karabiner elements
 mkdir -p $HOME/.config/karabiner/assets/complex_modifications/
@@ -43,4 +45,4 @@ ln -sf $dotfiles/python/pyproject.toml "$HOME/pyproject.toml"
 
 # vale
 ln -sf $dotfiles/vale/vale.ini "$HOME/.vale.ini"
-ln -sf $dotfiles/vale/vale_styles "$HOME/vale_styles"
+ln -sf $dotfiles/vale/vale_styles "$HOME/"

@@ -11,7 +11,7 @@ fish_add_path --move $HOME/.cargo/bin
 
 if status is-interactive
     set fish_greeting # Suppress fish welcome message
-    fish_config theme choose "Nord"
+    fish_config theme choose "catppuccin-frappe"
     fish_config prompt choose "Arrow"
     
     set -gx EDITOR hx
