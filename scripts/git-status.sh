@@ -1,7 +1,7 @@
 #!/bin/bash
 # a script to print the names of all git repos with uncommitted changes
 for repo in $(fd "\.git$" --hidden --absolute-path --type d); do
-    dir=$(dirname "$repo")
+    dir="$(dirname "$repo")"
     cd "$dir"
     status=$(git status --porcelain)
     if [[ $status ]]; then
