@@ -16,5 +16,12 @@ This repo contains the configuration files for the tools and applications I use.
 - `diff` alternative: [delta](https://github.com/dandavison/delta)
 - fuzzy-finder: [fzf](https://github.com/junegunn/fzf)
 - `csv` tool: [qsv](https://github.com/jqnatividad/qsv)
+- file browser: [broot](https://github.com/Canop/broot)
 - bulk rename [edir](https://github.com/bulletmark/edir)
 
+
+## Install
+
+```fish
+brew install fish helix zellij gitui ripgrep fd sd bat delta fzf qsv
+```

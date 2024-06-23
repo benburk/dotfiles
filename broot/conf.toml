@@ -1,0 +1,9 @@
+default_flags = "-gh"
+
+imports = [
+  "verbs.hjson",
+  { luma = ["dark", "unknown"], file = "skins/catppuccin-macchiato.hjson"}
+]
+
+[special-paths]
+".git" = { show = "never" }
