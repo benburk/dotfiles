@@ -46,3 +46,8 @@ ln -sf $dotfiles/python/pyproject.toml "$HOME/pyproject.toml"
 # vale
 ln -sf $dotfiles/vale/vale.ini "$HOME/.vale.ini"
 ln -sf $dotfiles/vale/vale_styles "$HOME/"
+
+# gitui
+mkdir -p $HOME/.config/gitui
+ln -sf $dotfiles/gitui/theme.ron "$HOME/.config/gitui/theme.ron"
+
