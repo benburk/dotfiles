@@ -2,4 +2,7 @@
 select = ["ALL"]
 ignore = [
     "T201", # print found
+    "D211", # no-blank-line
+    "D213", # multi-line-summary-second-line
+    "D401", # first line of docstring should be in imperative mood
 ]
