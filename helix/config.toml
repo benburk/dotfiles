@@ -1,0 +1,9 @@
+theme = "nord"
+
+[editor]
+line-number = "relative"
+true-color = true
+auto-pairs = false
+
+[keys.normal.space]
+z = ":toggle soft-wrap.enable"
