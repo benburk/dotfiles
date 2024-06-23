@@ -16,9 +16,10 @@
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Chromium, IndentWidth: 4 }",
     "github.copilot.enable": {
         "*": true,
-        "yaml": false,
         "plaintext": true,
-        "markdown": true
+        "markdown": true,
+        "scminput": false,
+        "yaml": true
     },
     "workbench.tree.indent": 20,
     
@@ -42,7 +43,7 @@
 
     "rust-analyzer.showUnlinkedFileNotification": false,
     "diffEditor.codeLens": true,
-    "workbench.activityBar.visible": false,
     "terminal.integrated.enableMultiLinePasteWarning": false,
+    "workbench.activityBar.location": "hidden",
 
 }
