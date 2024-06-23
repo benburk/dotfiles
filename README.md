@@ -1,7 +1,20 @@
 # Dotfiles
 
-This repository organizes the configuration files for the tools and applications I use. The `install_dotfiles.sh` script takes the various files and symlinks them to their expected location.
+This repo contains the configuration files for the tools and applications I use. `install.sh` takes the config files and symlinks them to their expected location. There exist [programs](https://wiki.archlinux.org/title/Dotfiles#Tools) to manage dotfiles, but I prefer the simplicity of this method.
 
-At one point, I tried to make everything work out of `$XDG_CONFIG_HOME`. Inevitably, one tool wouldn't respect it and break the convention. I have since opted to define my own dotfile structure and then symlink the files to their appropriate locations.
+## Tools
 
-There exist many [programs](https://wiki.archlinux.org/title/Dotfiles#Tools) to manage dotfiles, but I prefer the simplicity and control of my current setup.
+- Theme: [catppuccin frappe](https://github.com/catppuccin/catppuccin)
+- Shell: [fish](https://github.com/fish-shell/fish-shell)
+- Text editor: [helix](https://github.com/helix-editor/helix)
+- Terminal multiplexer: [zellij](https://github.com/zellij-org/zellij)
+- `git` client: [gitui](https://github.com/extrawurst/gitui)
+- `grep` alternative: [ripgrep](https://github.com/BurntSushi/ripgrep)
+- `find` alternative: [fd](https://github.com/sharkdp/fd)
+- `sed` alternative: [sd](https://github.com/chmln/sd)
+- `cat` alternative: [bat](https://github.com/sharkdp/bat)
+- `diff` alternative: [delta](https://github.com/dandavison/delta)
+- fuzzy-finder: [fzf](https://github.com/junegunn/fzf)
+- `csv` tool: [qsv](https://github.com/jqnatividad/qsv)
+- bulk rename [edir](https://github.com/bulletmark/edir)
+
