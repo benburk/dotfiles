@@ -114,7 +114,7 @@
                         "key_code": "h",
                         "modifiers": {"mandatory": ["fn"], "optional": ["any"]}
                     },
-                    "to": [{"key_code": "left_arrow", "modifiers": ["command"]}]
+                    "to": [{"key_code": "left_arrow", "modifiers": ["fn"]}]
                 },
                 {
                     "description": "quote = end",
@@ -123,7 +123,7 @@
                         "key_code": "quote",
                         "modifiers": {"mandatory": ["fn"], "optional": ["any"]}
                     },
-                    "to": [{"key_code": "right_arrow", "modifiers": ["command"]}]
+                    "to": [{"key_code": "right_arrow", "modifiers": ["fn"]}]
                 },
                 {
                     "description": "return = insert line below",
