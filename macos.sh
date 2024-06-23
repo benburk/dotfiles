@@ -19,9 +19,9 @@ brew install rg fd fzf git vale helix tree
 # Quick-look plugins https://www.quicklookplugins.com
 brew install --cask qlcolorcode qlstephen
 # Utilities
-brew install --cask karabiner-elements keepassxc iina qbittorrent cryptomator logisim-evolution selfcontrol
+brew install --cask karabiner-elements iina qbittorrent cryptomator logisim-evolution selfcontrol
 # Applications
-brew install --cask telegram visual-studio-code obsidian nordvpn orion jellyfin deezer calibre
+brew install --cask telegram visual-studio-code obsidian nordvpn orion jellyfin deezer
 
 
 # Dotfiles
@@ -33,6 +33,7 @@ git clone https://github.com/chariotsofiron/dotfiles ~/dotfiles
 # MISC SETUP
 
 # fzf setup
+# https://andrew-quinn.me/fzf/
 /usr/local/opt/fzf/install
 
 
