@@ -3,12 +3,23 @@ theme "catppuccin-frappe"
 keybinds {
     normal {
         unbind "Ctrl t"
-        bind "Ctrl b" { SwitchToMode "Tab"; }
 
         // we use arrow keys
         unbind "Alt h"
         unbind "Alt j"
         unbind "Alt k"
         unbind "Alt l"
+    }
+
+    shared {
+        bind "Ctrl b" { SwitchToMode "Tab"; }
+
+        // we use arrow keys
+        bind "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt Down" { MoveFocus "Down"; }
+        bind "Alt Up" { MoveFocus "Up"; }
+        bind "Alt m" { ToggleFloatingPanes; }
+
     }
 }
