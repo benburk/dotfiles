@@ -1,4 +1,8 @@
 {
+    "title": "Caps lock",
+    "author": "chariotsofiron",
+    "import_url": "https://raw.githubusercontent.com/chariotsofiron/dotfiles/main/karabiner/capslock.json",
+    "repo": "https://github.com/chariotsofiron/dotfiles",
     "rules": [
         {
             "description": "Caps lock",
