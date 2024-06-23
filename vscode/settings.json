@@ -25,10 +25,10 @@
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 88,
 
-    "[rust]": {
-        "editor.wordWrap": "bounded",
-        "editor.wordWrapColumn": 88
-    },
+    // "[rust]": {
+    //     "editor.wordWrap": "bounded",
+    //     "editor.wordWrapColumn": 88
+    // },
 
     // markdown
     "[markdown]": {

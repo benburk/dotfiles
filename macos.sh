@@ -24,26 +24,6 @@ brew install --cask karabiner-elements keepassxc iina qbittorrent cryptomator lo
 brew install --cask telegram visual-studio-code obsidian nordvpn orion jellyfin deezer calibre
 
 
-# Rust programming language
-# https://www.rust-lang.org/tools/install
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# Install formatting tool
-rustup component add rustfmt
-
-
-# Python programming language
-brew install python
-# linting dependencies
-pip install "black==22.8.0" "isort==5.10.1" "mypy==0.991" "pylint==2.15.3" "pytest==7.1.3" "pytest-cov==3.0.0" "refurb" "doctest"
-
-
-# C++ programming language
-brew install cmake conan llvm
-# symlink clang-format and clang-tidy to /usr/local/bin
-ln -s "$(brew --prefix llvm)/bin/clang-format" "/usr/local/bin/clang-format"
-ln -s "$(brew --prefix llvm)/bin/clang-tidy" "/usr/local/bin/clang-tidy"
-
-
 # Dotfiles
 mkdir ~/dotfiles
 git clone https://github.com/chariotsofiron/dotfiles ~/dotfiles
