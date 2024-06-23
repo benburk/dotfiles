@@ -5,6 +5,7 @@
             "description": "Special layer",
             "manipulators": [
                 {
+                    "description": "caps-lock = fn, tap for escape",
                     "type": "basic",
                     "from": {
                         "key_code": "caps_lock",
@@ -18,6 +19,16 @@
                     ]
                 },
                 {
+                    "description": "escape = caps-lock toggle",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "escape",
+                        "modifiers": {"optional": ["caps_lock"], "mandatory": ["fn"]}
+                    },
+                    "to": [{"key_code": "caps_lock"}]
+                },
+                {
+                    "description": "a = select word",
                     "type": "basic",
                     "from": {"key_code": "a", "modifiers": {"mandatory": ["fn"]}},
                     "to": [
@@ -31,6 +42,7 @@
                     ]
                 },
                 {
+                    "description": "multi-tap a = extend word selection",
                     "type": "basic",
                     "from": {"key_code": "a", "modifiers": {"mandatory": ["fn"]}},
                     "to": [
@@ -96,20 +108,47 @@
                     "to": [{"key_code": "right_arrow"}]
                 },
                 {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "return_or_enter",
-                        "modifiers": {"mandatory": ["fn"], "optional": ["any"]}
-                    },
-                    "to": [{"key_code": "right_arrow", "modifiers": ["command"]}]
-                },
-                {
+                    "description": "h = home",
                     "type": "basic",
                     "from": {
                         "key_code": "h",
                         "modifiers": {"mandatory": ["fn"], "optional": ["any"]}
                     },
                     "to": [{"key_code": "left_arrow", "modifiers": ["command"]}]
+                },
+                {
+                    "description": "quote = end",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "quote",
+                        "modifiers": {"mandatory": ["fn"], "optional": ["any"]}
+                    },
+                    "to": [{"key_code": "right_arrow", "modifiers": ["command"]}]
+                },
+                {
+                    "description": "return = insert line below",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "return_or_enter",
+                        "modifiers": {"mandatory": ["fn"]}
+                    },
+                    "to": [
+                        {"key_code": "right_arrow", "modifiers": ["command"]},
+                        {"key_code": "return_or_enter"}
+                    ]
+                },
+                {
+                    "description": "shift+return = insert line above",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "return_or_enter",
+                        "modifiers": {"mandatory": ["fn", "shift"]}
+                    },
+                    "to": [
+                        {"key_code": "left_arrow", "modifiers": ["command"]},
+                        {"key_code": "keypad_enter"},
+                        {"key_code": "up_arrow"}
+                    ]
                 },
                 {
                     "type": "basic",
