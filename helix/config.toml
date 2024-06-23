@@ -11,6 +11,11 @@ soft-wrap.wrap-at-text-width = true
 text-width = 80
 rulers = [80]
 
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
 [keys.normal.space]
 z = ":toggle soft-wrap.enable"
 '=' = ":format"
