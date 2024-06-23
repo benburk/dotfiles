@@ -4,6 +4,7 @@ theme = "catppuccin_frappe"
 line-number = "relative"
 true-color = true
 auto-save = true
+# shell = ["fish", "-c"]
 
 # soft-wrapping
 soft-wrap.enable = true
