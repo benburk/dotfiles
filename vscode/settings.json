@@ -1,13 +1,13 @@
 {
-    "security.workspace.trust.untrustedFiles": "open",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.inlineSuggest.enabled": true,
+    "editor.minimap.enabled": false,
+    "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "files.autoSave": "afterDelay",
-    "workbench.colorTheme": "Dracula",
+    "security.workspace.trust.untrustedFiles": "open",
     "window.zoomLevel": 1,
-    // "editor.inlineSuggest.enabled": true,
-    "explorer.confirmDelete": false,
-    "workbench.activityBar.visible": false,
-    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Dracula",
 
     // PYTHON
     "python.formatting.provider": "black",
@@ -35,8 +35,14 @@
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 88
     },
-    "editor.inlineSuggest.enabled": true,
+
     "[python]": {
         "editor.formatOnType": true
-    }
+    },
+
+    "rust-analyzer.showUnlinkedFileNotification": false,
+    "diffEditor.codeLens": true,
+    "workbench.activityBar.visible": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+
 }

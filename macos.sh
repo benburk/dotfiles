@@ -25,7 +25,7 @@ brew install --cask qlcolorcode qlstephen
 # Utilities
 brew install --cask karabiner-elements iina qbittorrent cryptomator logisim-evolution selfcontrol
 # Applications
-brew install --cask telegram visual-studio-code obsidian nordvpn orion jellyfin deezer
+brew install --cask visual-studio-code obsidian nordvpn jellyfin 1password
 
 
 # Dotfiles

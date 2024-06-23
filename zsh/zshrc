@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="/usr/local/opt/python/libexec/bin/:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin/:/usr/local/sbin:$PATH"
 
 # secrets
 # security add-generic-password -a "$USER" -s <key> -w <value>
